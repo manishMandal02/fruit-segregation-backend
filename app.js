@@ -7,19 +7,13 @@ const PORT = process.env.PORT || 8000;
 
 const shouldClickPhoto = false;
 
-// app.use(
-//   cors({
-//     origin: '*',
-//   })
-// );
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 
 app.use(express.json());
-
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://bms-fyp.vercel.app');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
 
 app.get('/', async (req, res) => {
   console.log('/ route hit');
